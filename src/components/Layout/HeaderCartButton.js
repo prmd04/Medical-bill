@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react';
 import { FaShoppingCart } from "react-icons/fa";
+import CartContext from '../store/CartContext';
 
-const HeaderCartButton = () => {
+
+const HeaderCartButton = (props) => {
+  const cartCtx  = useContext(CartContext)
+  const len = cartCtx.items.length;
   return (
-    <button className='bg-red-300 flex items-center p-2 m-2 cursor-pointer rounded-lg font-bold'>
+    <button className='bg-red-300 flex items-center py-2 px-4 m-2 cursor-pointer rounded-3xl font-bold' onClick={props.onShow}>
       <span>
-      <FaShoppingCart />
+        <FaShoppingCart />
       </span>
       <span className='m-2'>Your Cart</span>
-      <span className='p-1 m-1 w-5 text-white bg-green-500 rounded-full'> 0 </span>
+      <span className='py-1 px-2 m-1 text-white bg-[#ad5502] rounded-full'>{len}</span>
     </button>
-  )
-}
+  );
+};
 
-export default HeaderCartButton
+export default HeaderCartButton;

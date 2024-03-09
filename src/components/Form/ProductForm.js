@@ -36,8 +36,8 @@ const ProductForm = ({data,updateData}) => {
         <label htmlFor="description" className="block text-xl ml-4">Description:</label>
         <input type="text" id="description" name="description" placeholder="Enter Description" ref={descInput} className="border border-gray-400 rounded py-1 px-4 m-1" />
         <label htmlFor="price" className="block ml-4 text-xl">Price:</label>
-        <input type="number" id="price" name="price" placeholder="Enter Price" ref={priceInput} className="border border-gray-400 rounded py-1 px-4 m-1" />
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded ml-4">Submit</button>
+        <input type="number" id="price" step="0.01" name="price" placeholder="Enter Price" ref={priceInput} className="border border-gray-400 rounded py-1 px-4 m-1" />
+        <button type="submit" className="bg-amber-700 hover:bg-amber-900 text-white font-bold py-1 px-4 rounded ml-4">Submit</button>
       </form>
       </div>
     </div>
